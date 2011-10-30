@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @haiku.title %>
+</p>
+
+<p>
+  <b>Sentence:</b>
+  <%= @haiku.sentence %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @haiku.user_id %>
+</p>
+
+<p>
+  <b>Point:</b>
+  <%= @haiku.point %>
+</p>
+
+
+<%= link_to 'Edit', edit_haiku_path(@haiku) %> |
+<%= link_to 'Back', haikus_path %>

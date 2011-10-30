@@ -1,0 +1,15 @@
+
+<% if @current_user != nil %>
+<div class="login_btn">
+<%= link_to "Twitterでログイン", "/auth/twitter" %>&nbsp;&nbsp;
+<!--
+|&nbsp;&nbsp;<%= link_to "Facebookでログイン", "/auth/facebook" %>&nbsp;&nbsp;
+|&nbsp;&nbsp;<%= link_to "MIXIでログイン", "/auth/mixi" %>&nbsp;&nbsp;
+-->
+</div>
+<% else %>
+<%= link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'/smt/secretaries'} %><br/>
+<%= link_to '秘書を登録する', {:action=>'new',:controller=>'/smt/secretaries'} %><br/>
+<%= link_to '依頼内容の確認', :controller=>'/smt/my_page' %><br/>
+<%= link_to 'ツイートを見る',:controller=>'/smt/my_page',:action=>'my_tweets' %>
+<% end %>

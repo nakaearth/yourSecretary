@@ -1,0 +1,2 @@
+module Smt::SecretariesHelper
+end

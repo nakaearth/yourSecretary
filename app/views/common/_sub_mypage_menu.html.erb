@@ -1,0 +1,32 @@
+<div class="menu_text">
+<% if index_action? %>
+<br>
+<br>
+<button id="book_hide">本一覧を非表示</button>&nbsp;<button id="book_show">本一覧を表示</button>&nbsp;|&nbsp;&nbsp;
+<button id="schedule_hide">予定一覧非表示</button>&nbsp;<button id="schedule_show">予定一覧表示</button>&nbsp;|&nbsp;&nbsp;
+<button id="task_hide">タスク一覧を非表示</button>&nbsp;<button id="task_show">タスク一覧を表示</button>&nbsp;|&nbsp;&nbsp;
+<script>
+$("#schedule_show").click(function () {
+  $("#my_schedule_list").show("fast");
+});
+$("#book_show").click(function () {
+  $("#my_book_list").show("fast");
+});
+$("#task_show").click(function () {
+  $("#my_task_list").show("fast");
+});
+
+$("#schedule_hide").click(function () {
+  $("#my_schedule_list").hide(2000);
+});
+$("#book_hide").click(function () {
+  $("#my_book_list").hide(2000);
+});
+$("#task_hide").click(function () {
+  $("#my_task_list").hide(2000);
+});
+</script>
+<% end %>
+</div>
+<br>
+  

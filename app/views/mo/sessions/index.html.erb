@@ -1,0 +1,28 @@
+ﾛｸﾞｲﾝ
+<div id="new_form">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this secretary from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div id="login_form">
+  <div id="field1">
+    <%= f.label :provider %>: <%= f.text_field :provider %>
+  </div>
+  <div id="field2">
+    <%= f.label :uid %>: <%= f.text_field :uid %>
+  </div>
+  <div id="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+</div>

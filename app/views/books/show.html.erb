@@ -1,0 +1,16 @@
+<div class="menu_text">
+<%= link_to '編集する', edit_book_path(@book) %> |
+</div>
+<p id="notice"><%= notice %></p>
+
+<div class="mypage_form" >
+<p>
+  <b>タイトル:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>内容:</b>
+  <%= @book.description %>
+</p>
+</div>

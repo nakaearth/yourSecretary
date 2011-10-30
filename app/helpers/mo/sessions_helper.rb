@@ -1,0 +1,2 @@
+module Mo::SessionsHelper
+end

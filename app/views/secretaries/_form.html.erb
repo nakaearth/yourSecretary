@@ -1,0 +1,44 @@
+<div id="new_form">
+<%= form_for(@secretary) do |f| %>
+  <% if @secretary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@secretary.errors.count, "error") %> prohibited this secretary from being saved:</h2>
+
+      <ul>
+      <% @secretary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="secretary_form">
+  <div class="field">
+    <%= f.label :name %>: <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %>: <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    賢くない:<%= f.radio_button :cleverness,"0" %>|
+    やや賢くない:<%= f.radio_button :cleverness,"1" %>|
+    並み:<%= f.radio_button :cleverness,"2" %>|
+    やや賢い:<%= f.radio_button :cleverness,"3" %>|
+    賢い:<%= f.radio_button :cleverness,"4" %>
+  </div>
+  <div class="field">
+    正確でない:<%= f.radio_button :accuracy,"0" %>|
+    やや正確でない:<%= f.radio_button :accuracy,"1" %>|
+    並み:<%= f.radio_button :accuracy,"2"  %>|
+    やや正確:<%= f.radio_button :accuracy,"3" %>|
+    正確:<%= f.radio_button :accuracy,"4" %>
+  </div>
+  <div class="field">
+   メインの秘書にする:<%= f.radio_button :main_flag,"1" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+</div>

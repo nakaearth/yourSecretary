@@ -1,0 +1,70 @@
+<h1>マイページ</h1>
+<hr>
+  <p id="notice"><%= notice %></p>
+<h2>本一覧</h2>
+<div id="my_book_list">
+<%= will_paginate @my_books, :prev_label=>'«前', :next_label=>'次»'   %>
+<table class="mypage_table">
+  <tr class="list_menu">
+    <th>タイトル</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @my_books.each do |book| %>
+  <tr >
+    <td><%= book.title %></td>
+    <td><%= link_to '詳細を見る', book %></td>
+    <td><%= link_to '編集する', edit_book_path(book) %></td>
+    <td><%= link_to '削除する', book, :confirm => '本当に?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br>
+  <hr>
+<h2>予定一覧</h2>
+<div id="my_schedule_list">
+<%= will_paginate @my_schedule, :prev_label=>'«前', :next_label=>'次»'  %>
+<table class="mypage_table" >
+  <tr class="list_menu">
+    <th>タイトル</th>
+    <th>日付</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for schedule in @my_schedule %>
+    <%= will_paginate @my_schedule, :prev_label=>'«前', :next_label=>'次»'  %>
+    <tr>
+      <td><%=schedule.title %></td>
+      <td><%=schedule.date %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+<br>
+<h2>タスク一覧</h2>
+<div id="my_task_list">
+<table class="mypage_table">
+  <tr class="list_menu">
+    <th>タスク名</th>
+    <th>重要度</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @my_tasks.each do |task| %>
+  <tr>
+    <td><%= task.title %></td>
+    <td><%= task.priority %></td>
+    <td><%= link_to '詳細を見る', task %></td>
+    <td><%= link_to '編集する', edit_task_path(task) %></td>
+    <td><%= link_to '削除する', task, :confirm => '削除するならTwitterの方を先にお願い！', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>

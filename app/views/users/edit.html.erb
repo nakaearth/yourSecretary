@@ -1,0 +1,25 @@
+<h1>ユーザ情報編集</h1>
+<div id="users_form">
+<%= form_for @user,:html=>{:multipart=>true} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@secretary.errors.count, "error") %> prohibited this secretary from being saved:</h2>
+
+      <ul>
+      <% @secretary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%=@profile_image %><br>
+<div class="users_form" >
+  <div class="field">
+    <%= f.label :image %>: <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+</div>

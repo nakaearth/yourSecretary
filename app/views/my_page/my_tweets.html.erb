@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<table class="mypage_table">
+  <tr class="list_menu">
+    <th></th>
+    <th>名前</th>
+    <th>ツイート</th>
+  </tr>
+
+<% @user_timelines.each do |timeline| %>
+  <tr >
+     <td><%= timeline.user.id %></td>
+    <td><%= timeline.user.screen_name %></td>
+    <td><%= timeline.text %></td>
+  </tr>
+<% end %>
+</table>

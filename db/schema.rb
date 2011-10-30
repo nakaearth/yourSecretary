@@ -1,0 +1,101 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
+ActiveRecord::Schema.define(:version => 20111029083853) do
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.text     "description", :default => "", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "haikus", :force => true do |t|
+    t.string   "title"
+    t.string   "sentence"
+    t.integer  "user_id"
+    t.integer  "point"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "my_tweets", :force => true do |t|
+    t.integer  "user_id",                    :null => false
+    t.string   "tweet",      :default => "", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules", :force => true do |t|
+    t.string   "title"
+    t.string   "detail"
+    t.integer  "user_id"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "secretaries", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.integer  "cleverness"
+    t.integer  "accuracy"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "main_flag",         :default => 0
+    t.integer  "secretary_word_id"
+  end
+
+  add_index "secretaries", ["user_id"], :name => "index_secretaries_on_user_id"
+  add_index "secretaries", ["user_id"], :name => "index_secretaries_on_user_id_and_main_flag"
+
+  create_table "secretary_words", :force => true do |t|
+    t.string   "word"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "tasks", :force => true do |t|
+    t.string   "title"
+    t.integer  "priority"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "image_path", :default => "", :null => false
+  end
+
+  add_index "users", ["uid"], :name => "index_users_on_uid"
+
+end

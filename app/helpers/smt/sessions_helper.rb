@@ -1,0 +1,2 @@
+module Smt::SessionsHelper
+end

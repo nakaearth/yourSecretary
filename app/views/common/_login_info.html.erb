@@ -1,0 +1,17 @@
+<br>
+<br>
+  
+<% if @current_user==nil %>
+  <div class="login_btn">
+<%= link_to "Twitterでログイン", "/auth/twitter" %>&nbsp;&nbsp;
+<!--
+|&nbsp;&nbsp;<%= link_to "Facebookでログイン", "/auth/facebook" %>&nbsp;&nbsp;
+|&nbsp;&nbsp;<%= link_to "MIXIでログイン", "/auth/mixi" %>&nbsp;&nbsp;
+-->
+</div>
+<% else %>
+<div class="login_user_info">
+&nbsp;&nbsp;<img src="<%=@current_user.profile_path %>"><a href="/users/<%=@current_user.id %>/edit"><%=@current_user.name %>さん</a>、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/auth/logout">ログアウト</a>
+<% end %>
+  </div>
+<br>

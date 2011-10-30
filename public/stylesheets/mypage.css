@@ -1,0 +1,70 @@
+/* 
+    Document   : secretaries
+    Created on : 2011/04/17, 12:26:03
+    Author     : nakamura
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.title {
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+.label {
+	font-size: 10pt;
+	font-weight: bold;
+    background-color: #FFFFDB;
+}
+
+header{
+    width: 1000px;
+    height: 50px;
+}
+section {
+    width: 1000px;
+	/*background-color: #61D060;*/
+	visibility: visible;
+	z-index: 0;
+    float: right;
+    margin: 3px;
+}
+nav {
+    text-align: left;
+	font-weight: bold;
+	border: 2px solid #333333;
+	background-color: #FFFFDB;
+	vertical-align: text-top;
+    width: 200px;
+	height: 600px;
+    float: right;
+    margin: 3px;
+}
+footer{
+    width: 1000px;
+    height: 60px;
+    text-align: center;
+}
+
+.task_list_table {
+    width: 800px;
+	text-align: left;
+	font-size: 9pt;
+}
+.mypage_table {
+    width: 800px;
+	text-align: left;
+	font-size: 9pt;
+}
+.mypage_form {
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: #FFFFDB;
+    border: 1px solid #333333;
+    width: 700px;
+	margin: 3px;
+}

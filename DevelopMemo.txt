@@ -1,0 +1,94 @@
+・認証
+http://ja.asciicasts.com/episodes/241-simple-omniauth
+
+○Twitter設定
+https://dev.twitter.com/apps/872220
+
+○
+ haml
+ json
+ ruby-mp3info
+ googlecharts
+ aws-s3 (if you use Amazon S3 to store files)
+ rubyzip (for extracting mp3s from zip files)
+
+
+●Twitter
+http://twitter4r.rubyforge.org/rdoc/
+http://d.hatena.ne.jp/hyoromo/20090327/1238178188
+
+
+●Cron処理：whenever
+https://github.com/javan/whenever
+
+○JQuery対応済み
+>rails new *** -J
+>https://github.com/rails/jquery-ujs からrails.jsをダウンロード
+
+
+●
+画像アップ
+
+Gemfileに以下の行を追加します
+
+gem "carrierwave"
+
+gemを追加したので，bundlerを利用してgemをインストールします。
+
+$ bundle
+
+まずは，carrierwaveを利用するためにファイルをgenerateします。以下のコマ
+ンドを発行すると，ファイルアップロード用のクラスが生成されます。
+
+$ rails g uploader image
+
+既存のmangaクラスに画像を追加する形にするために，userテーブルにimageカ
+ラムを追加します。
+
+$ rails g migration add_image_to_users image:string
+
+マイグレーションファイルが生成されるので，マイグレーションを実行します。
+
+$ rake db:migrate
+
+http://gihyo.jp/dev/serial/01/heroku/0011?page=1
+
+https://github.com/jnicklas/carrierwave/issues/91
+
+・omniauthを使ったツブヤキ
+http://hai3.net/blog/?p=67
+http://d.hatena.ne.jp/yoshidaa/20110112/1294846937
+
+
+○Cucumberを使う
+参考：http://d.hatena.ne.jp/yuunachan/20101004/1286161317
+      http://d.hatena.ne.jp/itagakim/20100924/1285338780
+1)Gemfileに追記
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails',:group=>:development
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'spork'
+  gem 'launchy' # So you can do Then show me the page
+  gem 'ramaze'
+  gem 'webrat'
+end
+
+2)
+＞ruby script/rails generate cucumber:install ja --rspec --capybara
+
+3)
+
+○SSL対応
+http://d.hatena.ne.jp/deeeki/20110526/rails3_ssl_requirement
+
+
+○HerokuでPushできない
+Gemfile.lock の中のイカの2行を削除する。
+PLATFORMS
+  x86-mingw32
+

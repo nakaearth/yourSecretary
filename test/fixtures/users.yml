@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  privider: MyString
+  uid: MyString
+  name: MyString
+
+two:
+  privider: MyString
+  uid: MyString
+  name: MyString

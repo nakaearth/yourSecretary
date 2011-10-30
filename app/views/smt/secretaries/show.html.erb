@@ -1,0 +1,33 @@
+<div class="menu_text">
+<%= link_to '編集する', edit_secretary_path(@secretary) %> |
+<%= link_to '一覧へ', secretaries_path %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<div class="secretary_form" >
+<p>
+  <b>名前:</b>
+  <%= @secretary.name %>
+</p>
+
+<p>
+  <b>年齢:</b>
+  <%= @secretary.age %>
+</p>
+
+<p>
+  <b>賢さ:</b>
+  <%= cleverness_value(@secretary.cleverness) %>
+</p>
+
+<p>
+  <b>正確さ:</b>
+  <%= accuracy_value(@secretary.accuracy) %>
+</p>
+<% if @secretary_word != nil %>
+<p>
+  <b>報告の仕方:</b>
+  ツブヤキを解析してデータ登録を<%= @secretary_word.word %>
+</p>
+<% end %>
+</div>

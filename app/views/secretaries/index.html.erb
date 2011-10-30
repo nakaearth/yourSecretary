@@ -1,0 +1,30 @@
+<br>
+<% if @current_user != nil %>
+<p id="notice"><%= notice %></p>
+<br>
+<br>
+ <%= will_paginate @secretaries, :prev_label=>'«前', :next_label=>'次»' %>
+<table class="secretary_table">
+  <tr class="list_menu">
+    <th></th>
+    <th class="secretary_td">名前</th>
+    <th class="secretary_td">年齢</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @secretaries.each do |secretary| %>
+  <tr >
+    <td class="secretary_td_menu"><%=main_secretary(secretary.main_flag) %> </td>
+    <td class="secretary_td"><%= secretary.name %></td>
+    <td class="secretary_td"><%= secretary.age %></td>
+    <td class="secretary_td_menu"><%= link_to '詳細を見る', secretary %></td>
+    <td class="secretary_td_menu"><%= link_to '編集する', edit_secretary_path(secretary) %></td>
+    <td class="secretary_td_menu"><%= link_to '削除する', secretary, :confirm => '本当に?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <tr>
+    <th>タスク名</th>
+    <th>重要度</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @my_tasks.each do |task| %>
+  <tr>
+    <td><%= task.title %></td>
+    <td><%= task.priority %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_task_path %>

@@ -1,0 +1,22 @@
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/secretaries/new" for 127.0.0.1 at 2011-08-16 12:48:33 +0900
+  Processing by SecretariesController#new as HTML
+Rendered secretaries/_form.html.erb (344.0ms)
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.0ms)
+Rendered common/_menu.html.erb (0.0ms)
+Rendered secretaries/new.html.erb within layouts/secretaries (370.0ms)
+Completed 200 OK in 392ms (Views: 380.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2011-08-16 12:48:34 +0900
+  Processing by TasksController#new as HTML
+Rendered tasks/_form.html.erb (6.0ms)
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (0.0ms)
+Rendered common/_menu.html.erb (0.0ms)
+Rendered tasks/new.html.erb within layouts/global_layout (15.0ms)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.0ms)

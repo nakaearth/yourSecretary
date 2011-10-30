@@ -1,0 +1,17 @@
+<div class="menu_text">
+<% if @current_user != nil %>
+<br>
+<font color="red" size="4">「*という名前の本が欲しい」や「*に予定を入れようかな」「TODO:」と呟くと貴方の秘書が情報を登録します。</font>
+<br><br><br>
+<%= link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} %>&nbsp;&nbsp;|&nbsp;&nbsp;
+<%= link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} %>&nbsp;&nbsp;|&nbsp;&nbsp;
+<%= link_to '依頼内容の確認', :controller=>'my_page' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+<%= link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+<%= link_to '俳句を書く',:controller=>'haikus',:action=>'index' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  <%= link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+<% end %>
+</div>
+<br>
+  
