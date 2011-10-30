@@ -4,7 +4,8 @@ class HaikusController <  AbstractPcController
   # GET /haikus.xml
   def index
     @current_user = current_user
-    @haikus = Haiku.all
+    #@haikus = Haiku.all
+    @haikus = Haiku.joins(:user).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +46,7 @@ class HaikusController <  AbstractPcController
   def create
     @current_user = current_user
     @haiku = Haiku.new(params[:haiku])
-
+    @haiku.user_id=@current_user.id
     respond_to do |format|
       if @haiku.save
         format.html { redirect_to(@haiku, :notice => 'Haiku was successfully created.') }

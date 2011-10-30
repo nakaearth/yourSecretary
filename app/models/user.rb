@@ -2,11 +2,12 @@ class User < ActiveRecord::Base
   has_one :secretary
   has_many :books
   has_many :tasks
+  has_many :haikus
   validates :name, :presence=>true
   validates :uid, :presence=>true
   validates :token, :presence=>true
   validates :secret, :presence=>true
-  mount_uploader :image,ImageUploader
+ # mount_uploader :image,ImageUploader
   
   def self.create_with_omniauth(auth)
     create!do |user|

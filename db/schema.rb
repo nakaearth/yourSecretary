@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20111029083853) do
     t.integer  "secretary_word_id"
   end
 
+  add_index "secretaries", ["user_id", "main_flag"], :name => "index_secretaries_on_user_id_and_main_flag"
   add_index "secretaries", ["user_id"], :name => "index_secretaries_on_user_id"
-  add_index "secretaries", ["user_id"], :name => "index_secretaries_on_user_id_and_main_flag"
 
   create_table "secretary_words", :force => true do |t|
     t.string   "word"

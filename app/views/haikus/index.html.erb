@@ -14,7 +14,7 @@
 <% @haikus.each do |haiku| %>
   <tr　>
     <td><%= haiku.title %></td>
-    <td><%= haiku.user_id %></td>
+    <td><%= haiku.user.name %></td>
     <td><%= haiku.point %></td>
     <td><%= link_to 'Show', haiku %></td>
     <td><%= link_to 'Edit', edit_haiku_path(haiku) %></td>
