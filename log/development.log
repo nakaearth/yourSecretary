@@ -27112,3 +27112,40 @@ Rendered common/_login_info.html.erb (1.3ms)
 Rendered common/_menu.html.erb (2.8ms)
 Rendered haikus/index.html.erb within layouts/haiku (85.8ms)
 Completed 200 OK in 156ms (Views: 90.3ms | ActiveRecord: 2.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-10-30 13:32:43 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "tasks" ("title", "priority", "user_id", "created_at", "updated_at") VALUES (':本を買う', 1, 1, '2011-10-30 04:32:46.876298', '2011-10-30 04:32:46.876298')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/my_tweets.html.erb within layouts/my_page (17.9ms)
+Completed 200 OK in 2731ms (Views: 25.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-10-30 13:32:50 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.3ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.2ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.7ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (42.9ms)
+Completed 200 OK in 1553ms (Views: 47.9ms | ActiveRecord: 4.7ms)
