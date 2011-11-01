@@ -27149,3 +27149,647 @@ Rendered common/_menu.html.erb (2.7ms)
 Rendered common/_sub_mypage_menu.html.erb (0.8ms)
 Rendered my_page/index.html.erb within layouts/my_page (42.9ms)
 Completed 200 OK in 1553ms (Views: 47.9ms | ActiveRecord: 4.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 10:10:11 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.3ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (1.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (45.0ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-11-01 10:10:14 +0900
+
+
+Started GET "/auth/twitter/callback?oauth_token=dFkATlryEqEgpVYx28RXPCe7VZL16WTBOAYy34okw&oauth_verifier=tdcQq3Dikj70RDH6nh149wvWlnQ6fUrVTqMqSIJ3T9U" for 127.0.0.1 at 2011-11-01 10:10:19 +0900
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"dFkATlryEqEgpVYx28RXPCe7VZL16WTBOAYy34okw", "oauth_verifier"=>"tdcQq3Dikj70RDH6nh149wvWlnQ6fUrVTqMqSIJ3T9U", "provider"=>"twitter"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '7751092' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 10:10:20 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.8ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (23.9ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (105.6ms)
+Completed 200 OK in 172ms (Views: 109.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-01 10:10:27 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (0.6ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered haikus/index.html.erb within layouts/haiku (43.1ms)
+Completed 200 OK in 161ms (Views: 48.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/secretaries" for 127.0.0.1 at 2011-11-01 10:10:31 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.3ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (23.2ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (106.9ms)
+Completed 200 OK in 167ms (Views: 111.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 10:10:33 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "tasks" ("title", "priority", "user_id", "created_at", "updated_at") VALUES ('：これを見ること！http://t.co/wtZtMGJq', 1, 1, '2011-11-01 01:10:36.105926', '2011-11-01 01:10:36.105926')[0m
+  [1m[35mSQL (1.8ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.8ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.2ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (84.6ms)
+Completed 200 OK in 2980ms (Views: 90.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/auth/logout" for 127.0.0.1 at 2011-11-01 10:10:47 +0900
+  Processing by SessionsController#destory as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 10:10:47 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (1.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (58.0ms)
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 4.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-11-01 10:23:13 +0900
+
+
+Started GET "/auth/twitter/callback?oauth_token=4odvXuGJnx1vzPmRC7WBDFr0ZqSrbN1kpq5SNHTAT4&oauth_verifier=4hteL7qMU1TWeKuKZVN9AlM1cQlNUo5IgAbNymbY" for 127.0.0.1 at 2011-11-01 10:23:16 +0900
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"4odvXuGJnx1vzPmRC7WBDFr0ZqSrbN1kpq5SNHTAT4", "oauth_verifier"=>"4hteL7qMU1TWeKuKZVN9AlM1cQlNUo5IgAbNymbY", "provider"=>"twitter"}
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '7751092' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 120ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 10:23:18 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.8ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (67.8ms)
+Rendered common/_menu.html.erb (3.3ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (117.2ms)
+Completed 200 OK in 239ms (Views: 125.7ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/secretaries/new" for 127.0.0.1 at 2011-11-01 10:23:24 +0900
+  Processing by SecretariesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered secretaries/_form.html.erb (15.9ms)
+Rendered common/_header.html.erb (1.6ms)
+Rendered common/_login_info.html.erb (21.8ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered secretaries/new.html.erb within layouts/secretaries (53.4ms)
+Completed 200 OK in 208ms (Views: 62.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/secretaries" for 127.0.0.1 at 2011-11-01 10:23:51 +0900
+  Processing by SecretariesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"REjbSGdRZTbfRRRbnCLbPHFx3gJKD0q6DosFIQnX08w=", "secretary"=>{"name"=>"東野圭吾", "age"=>"33", "cleverness"=>"3", "accuracy"=>"4"}, "commit"=>"登録する"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (3.2ms)[0m  [1mINSERT INTO "secretaries" ("name", "age", "cleverness", "accuracy", "user_id", "created_at", "updated_at", "main_flag", "secretary_word_id") VALUES ('東野圭吾', 33, 3, 4, 1, '2011-11-01 01:23:52.029675', '2011-11-01 01:23:52.029675', 0, 4)[0m
+Redirected to http://localhost:3000/secretaries/2
+Completed 302 Found in 209ms
+
+
+Started GET "/secretaries/2" for 127.0.0.1 at 2011-11-01 10:23:52 +0900
+  Processing by SecretariesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSecretary Load (0.3ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE "secretaries"."id" = 2 LIMIT 1
+  [1m[36mSecretaryWord Load (2.5ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 4 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.4ms)
+Rendered common/_menu.html.erb (1.1ms)
+Rendered secretaries/show.html.erb within layouts/secretaries (22.2ms)
+Completed 200 OK in 136ms (Views: 28.8ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/secretaries" for 127.0.0.1 at 2011-11-01 10:23:57 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.3ms)
+Rendered common/_login_info.html.erb (21.8ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (64.4ms)
+Completed 200 OK in 199ms (Views: 69.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-11-01 10:24:08 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/my_tweets.html.erb within layouts/my_page (17.7ms)
+Completed 200 OK in 2317ms (Views: 26.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/secretaries/new" for 127.0.0.1 at 2011-11-01 10:24:17 +0900
+  Processing by SecretariesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered secretaries/_form.html.erb (9.2ms)
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (22.5ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/new.html.erb within layouts/secretaries (47.1ms)
+Completed 200 OK in 208ms (Views: 53.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/secretaries" for 127.0.0.1 at 2011-11-01 10:24:20 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (23.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (141.3ms)
+Completed 200 OK in 200ms (Views: 146.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/auth/logout" for 127.0.0.1 at 2011-11-01 10:24:23 +0900
+  Processing by SessionsController#destory as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 10:24:23 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (1.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (12.1ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 3.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 10:55:47 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.6ms)
+Rendered common/_menu.html.erb (1.2ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (15.1ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 11:00:22 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.4ms)
+Rendered common/_menu.html.erb (1.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (14.1ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-11-01 11:00:26 +0900
+
+
+Started GET "/auth/twitter/callback?oauth_token=LffZSpAGNFP0Cgo0cRBXd5NUYjb9aw2LIyAaSLfh3yY&oauth_verifier=8aF8V3sHFmwFm59NzophMvxvwdlHhouXRYDLDHFV3Pc" for 127.0.0.1 at 2011-11-01 11:00:30 +0900
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"LffZSpAGNFP0Cgo0cRBXd5NUYjb9aw2LIyAaSLfh3yY", "oauth_verifier"=>"8aF8V3sHFmwFm59NzophMvxvwdlHhouXRYDLDHFV3Pc", "provider"=>"twitter"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '7751092' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 72ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 11:00:31 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.8ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (2.1ms)
+Rendered common/_login_info.html.erb (22.9ms)
+Rendered common/_menu.html.erb (3.3ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (111.7ms)
+Completed 200 OK in 183ms (Views: 116.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/secretaries/new" for 127.0.0.1 at 2011-11-01 11:00:34 +0900
+  Processing by SecretariesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered secretaries/_form.html.erb (18.3ms)
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (66.4ms)
+Rendered common/_menu.html.erb (3.7ms)
+Rendered secretaries/new.html.erb within layouts/secretaries (100.5ms)
+Completed 200 OK in 227ms (Views: 106.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:00:35 +0900
+  Processing by MyPageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (2.4ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.2ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (3.3ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (47.7ms)
+Completed 200 OK in 1672ms (Views: 52.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-11-01 11:00:41 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/my_tweets.html.erb within layouts/my_page (17.1ms)
+Completed 200 OK in 2728ms (Views: 26.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/auth/logout" for 127.0.0.1 at 2011-11-01 11:01:02 +0900
+  Processing by SessionsController#destory as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 11:01:03 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (1.2ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (12.6ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 4.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-11-01 11:26:19 +0900
+
+
+Started GET "/auth/twitter/callback?oauth_token=TCxoUFC3nBRMNDtRKKjlUcZI2Ei8RmQy72C8uI&oauth_verifier=MbAxtXofWe7PZMRkGnEOjNNkEt0BtzjMFGg0YN7wnQ" for 127.0.0.1 at 2011-11-01 11:26:24 +0900
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"TCxoUFC3nBRMNDtRKKjlUcZI2Ei8RmQy72C8uI", "oauth_verifier"=>"MbAxtXofWe7PZMRkGnEOjNNkEt0BtzjMFGg0YN7wnQ", "provider"=>"twitter"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '7751092' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-01 11:26:25 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.8ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (22.6ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (112.4ms)
+Completed 200 OK in 180ms (Views: 120.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:26:54 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (89.3ms)
+Completed 200 OK in 2085ms (Views: 96.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/stylesheets/assets/application.css" for 127.0.0.1 at 2011-11-01 11:26:56 +0900
+
+ActionController::RoutingError (No route matches "/stylesheets/assets/application.css"):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:29:33 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (8.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (2.6ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.4ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (122.3ms)
+Completed 200 OK in 1734ms (Views: 128.9ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:29:53 +0900
+  Processing by MyPageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.3ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.2ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (91.8ms)
+Completed 200 OK in 1464ms (Views: 95.8ms | ActiveRecord: 4.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:31:34 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (2.6ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (17.6ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.3ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.6ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (78.8ms)
+Completed 200 OK in 1866ms (Views: 66.1ms | ActiveRecord: 24.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:35:16 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (2.5ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.4ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (48.2ms)
+Completed 200 OK in 1707ms (Views: 55.6ms | ActiveRecord: 6.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:38:16 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (49.3ms)
+Completed 200 OK in 1756ms (Views: 54.4ms | ActiveRecord: 4.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:39:10 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (2.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.3ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (1.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (2.1ms)
+Rendered common/_login_info.html.erb (1.5ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (165.3ms)
+Completed 200 OK in 2095ms (Views: 168.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:40:15 +0900
+  Processing by MyPageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.3ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.7ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.4ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (124.7ms)
+Completed 200 OK in 2053ms (Views: 134.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-11-01 11:40:20 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/my_tweets.html.erb within layouts/my_page (16.5ms)
+Completed 200 OK in 2727ms (Views: 25.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:40:24 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (1.0ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (45.4ms)
+Completed 200 OK in 1962ms (Views: 49.8ms | ActiveRecord: 6.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:42:28 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.9ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.3ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (142.7ms)
+Completed 200 OK in 2290ms (Views: 148.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:56:22 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (43.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (2.6ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.3ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered my_page/index.html.erb within layouts/my_page (84.6ms)
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (4.7ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Completed 200 OK in 2133ms (Views: 131.2ms | ActiveRecord: 51.6ms)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-11-01 11:57:01 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.3ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.3ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = ? LIMIT 1[0m  [["id", 2]]
+Rendered my_page/my_tweets.html.erb within layouts/my_page (1.8ms)
+Rendered common/_header.html.erb (0.3ms)
+Rendered common/_login_info.html.erb (0.2ms)
+Rendered common/_menu.html.erb (3.7ms)
+Rendered common/_sub_mypage_menu.html.erb (0.1ms)
+Completed 200 OK in 2991ms (Views: 22.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-01 11:57:06 +0900
+  Processing by MyPageController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (title = '：これを見ること！http://t.co/wtZtMGJq' and user_id = 1)[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE (title = ':本を買う' and user_id = 1)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.3ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.4ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.3ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered my_page/index.html.erb within layouts/my_page (113.2ms)
+Rendered common/_header.html.erb (0.4ms)
+Rendered common/_login_info.html.erb (0.2ms)
+Rendered common/_menu.html.erb (3.6ms)
+Rendered common/_sub_mypage_menu.html.erb (0.1ms)
+Completed 200 OK in 1512ms (Views: 127.5ms | ActiveRecord: 5.6ms)
