@@ -24,10 +24,14 @@ YourSecretary::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
   config.serve_static_assets = true
-  config.assets.compress = true
-  config.assets.compile = true
+  #config.assets.compress = true
+  #config.assets.compile = true
   
-  config.assets.digest=true
-  config.static_cache_control="public,max-age=#{1.day}"
+  #config.assets.digest=true
+  #config.static_cache_control="public,max-age=#{1.day}"
+
+  #Localhost 11211 memcahced
+  config.cache_store= :dalli_store
+  
 end
 

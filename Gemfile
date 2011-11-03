@@ -1,12 +1,11 @@
 source 'http://rubygems.org'
 
-#gem 'rails', '3.0.9'
-gem 'rails', '3.1.1'
+gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'omniauth'
+gem 'omniauth','0.3.2'
 gem 'json'
 
 gem 'will_paginate'
@@ -16,8 +15,8 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'jpmobile',  :require => 'action_pack'
 gem 'bartt-ssl_requirement', :require => 'ssl_requirement'
 gem 'sprockets', '~> 2.0'
+gem 'dalli'
 
-#gem 'whenever', :require => false
 gem 'whenever'
 gem "carrierwave"
 group :development, :test do

@@ -3,6 +3,8 @@ http://ja.asciicasts.com/episodes/241-simple-omniauth
 
 ○Twitter設定
 https://dev.twitter.com/apps/872220
+http://blog.twiwt.org/e/14b25f
+
 
 ○
  haml
@@ -91,4 +93,8 @@ http://d.hatena.ne.jp/deeeki/20110526/rails3_ssl_requirement
 Gemfile.lock の中のイカの2行を削除する。
 PLATFORMS
   x86-mingw32
+
+○CSS
+http://d.hatena.ne.jp/secondlife/20110919/1316438465
+
 

@@ -10,7 +10,11 @@ class MyPageController < AbstractPcController
 
   def index
     @user = current_user
-    @my_books=Book.where('user_id=?',@user.id).latest.paginate(:page => params[:page], :per_page => 5)
+    @my_books=Rails.cache.read('MY_BOOKS')
+    if @my_books == nil
+      @my_books=Book.where('user_id=?',@user.id).latest.paginate(:page => params[:page], :per_page => 5)
+      Rails.cache.write('MY_BOOKS',@my_books)
+    end
     @my_schedule=Schedule.where('user_id=?',@user.id).latest.paginate(:page => params[:page], :per_page => 5)
     @my_tasks ||=Task.where('user_id=?',@user.id).latest.paginate(:page=>params[:pgae],:per_page=>5)
     MyTweets.tweet_analyze_for_user @user
