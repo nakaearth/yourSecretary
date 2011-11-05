@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :secretary
+  has_one :point
   has_many :books
   has_many :tasks
   has_many :haikus

@@ -5,11 +5,9 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
-#
- every 1.hours do
+ set :output, "log/cron_log.log"
+ every 3.hours do
    runner "MyTweets.tweets_analyze"
-#   rake "some:great:rake:task"
  end
 #
 # every 4.days do

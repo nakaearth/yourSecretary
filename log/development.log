@@ -28014,3 +28014,923 @@ Rendered common/_menu.html.erb (2.8ms)
 Rendered common/_sub_mypage_menu.html.erb (0.7ms)
 Rendered my_page/index.html.erb within layouts/my_page (54.1ms)
 Completed 200 OK in 1882ms (Views: 58.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-04 01:07:23 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.8ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (60.4ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (106.7ms)
+Completed 200 OK in 231ms (Views: 111.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 12:12:19 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.5ms)
+Rendered common/_menu.html.erb (1.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (45.1ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-11-05 12:12:35 +0900
+
+
+Started GET "/auth/twitter/callback?oauth_token=6Xwn7pQG34XRP7NcK5pjQMKClszU3WTpscARYNnH16U&oauth_verifier=rxPi2FtPffvPBW5Q90Tiqs7xdjcUtUYPaR0oNa5bs" for 127.0.0.1 at 2011-11-05 12:14:11 +0900
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"6Xwn7pQG34XRP7NcK5pjQMKClszU3WTpscARYNnH16U", "oauth_verifier"=>"rxPi2FtPffvPBW5Q90Tiqs7xdjcUtUYPaR0oNa5bs", "provider"=>"twitter"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '7751092' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 111ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-05 12:14:13 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.8ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (27.4ms)
+Rendered common/_menu.html.erb (4.2ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (90.8ms)
+Completed 200 OK in 312ms (Views: 95.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-05 12:57:01 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 86ms
+
+ArgumentError (Unknown validator: 'Haiku'):
+  app/models/haiku.rb:4:in `<class:Haiku>'
+  app/models/haiku.rb:1:in `<top (required)>'
+  app/controllers/haikus_controller.rb:8:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (25.3ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.4ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-05 12:57:53 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (0.6ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (82.6ms)
+Completed 200 OK in 214ms (Views: 91.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-05 12:58:19 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (0.6ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (40.1ms)
+Completed 200 OK in 187ms (Views: 44.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-05 14:27:49 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (0.6ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.4ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered haikus/index.html.erb within layouts/haiku (43.5ms)
+Completed 200 OK in 178ms (Views: 51.4ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE TABLE "points" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "point" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111105045220')
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111105061420')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("haikus")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("my_tweets")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("points")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schedules")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretaries")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id_and_main_flag')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretary_words")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_session_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("tasks")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_uid')[0m
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+Migrating to CreateHaikuSearches (20111105061420)
+Migrating to ModifyColumnHaikuSearch (20111105070809)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111105070809')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("haikus")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("my_tweets")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("points")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schedules")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretaries")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id_and_main_flag')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretary_words")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("sessions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_session_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("tasks")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_uid')[0m
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("haikus")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("my_tweets")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("points")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schedules")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretaries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id_and_main_flag')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretary_words")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("haikus")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("my_tweets")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("points")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schedules")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretaries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id_and_main_flag')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretary_words")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("haikus")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("my_tweets")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("points")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schedules")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretaries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id_and_main_flag')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretary_words")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("haikus")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("my_tweets")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("points")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schedules")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretaries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id_and_main_flag')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretary_words")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("haikus")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("my_tweets")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("points")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schedules")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretaries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id_and_main_flag')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretary_words")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')

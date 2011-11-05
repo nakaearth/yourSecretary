@@ -97,4 +97,6 @@ PLATFORMS
 ○CSS
 http://d.hatena.ne.jp/secondlife/20110919/1316438465
 
+○Groonga
+http://groonga.rubyforge.org/rroonga/ja/file.tutorial.html
 

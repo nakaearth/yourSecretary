@@ -89,7 +89,7 @@ class MyTweets < ActiveRecord::Base
     tweet_texts=user_tweet.text.scan(/.*TODO.*/)
     if tweet_texts.size > 0
       @task = Task.new
-      title = tweet_texts[0].tr("TODO","")
+      title = tweet_texts[0].tr("TODO:","")
       @tasks =Task.where("title = ? and user_id = ?",title,user.id)
       if @tasks.size > 0
         return

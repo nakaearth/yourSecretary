@@ -5,6 +5,8 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'rroonga'
+gem 'activegroonga'
 gem 'omniauth','0.3.2'
 gem 'json'
 
@@ -19,6 +21,7 @@ gem 'dalli'
 
 gem 'whenever'
 gem "carrierwave"
+
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails',:group=>:development
