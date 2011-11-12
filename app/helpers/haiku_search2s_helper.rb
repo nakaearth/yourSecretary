@@ -1,0 +1,2 @@
+module HaikuSearch2sHelper
+end

@@ -5,7 +5,6 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'rroonga'
 gem 'activegroonga'
 gem 'omniauth','0.3.2'
 gem 'json'

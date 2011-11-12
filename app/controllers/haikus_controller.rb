@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'groonga'
+
 class HaikusController <  AbstractPcController
   layout "haiku"
   # GET /haikus
@@ -49,7 +52,7 @@ class HaikusController <  AbstractPcController
     @haiku.user_id=@current_user.id
     respond_to do |format|
       if @haiku.save
-        @haiku_search=HaikuSearch.new
+        @haiku_search=Groonga["haiku_search"]
         @haiku_search.add(params[:haiku][:sentence])
         format.html { redirect_to(@haiku, :notice => 'Haiku was successfully created.') }
         format.xml  { render :xml => @haiku, :status => :created, :location => @haiku }

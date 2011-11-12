@@ -1,0 +1,21 @@
+<%= form_for(@haiku_search) do |f| %>
+  <% if @haiku_search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@haiku_search.errors.count, "error") %> prohibited this haiku_search from being saved:</h2>
+
+      <ul>
+      <% @haiku_search.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sentence %><br />
+    <%= f.text_field :sentence %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

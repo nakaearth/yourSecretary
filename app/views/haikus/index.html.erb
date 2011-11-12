@@ -1,12 +1,12 @@
 <h1>俳句を見てみましょう。お気に入りの俳句はありますかね？？</h1>
-
+<br>
 <%= link_to '俳句を書く', new_haiku_path %>|
+ <%=link_to '俳句を検索する',:controller=>'haiku_searches' %>
 <br>
 <table class="haiku_table">
   <tr class="list_menu">
     <th class="haiku_td">タイトル</th>
-    <th class="haiku_td">作者</th>
-    <th >いいね</th>
+    <th class="haiku_td">著者</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,7 +16,6 @@
   <tr　>
     <td><%= haiku.title %></td>
     <td><%= haiku.user.name %></td>
-    <td><%= haiku.point %></td>
     <td><%= link_to 'Show', haiku %></td>
     <td><%= link_to 'Edit', edit_haiku_path(haiku) %></td>
     <td><%= link_to 'Destroy', haiku, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -12,6 +12,6 @@ Groonga::Schema.create_table("terms",:type=>:patricia_trie,
                              :key_normalize=>true,
                              :default_tokenizer=>"TokenBigram")
 Groonga::Schema.change_table("terms") do |table|
-  table.index("heroku_search.sentence")
+  table.index("haiku_search.sentence")
 end
 

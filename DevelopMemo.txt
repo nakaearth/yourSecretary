@@ -99,4 +99,7 @@ http://d.hatena.ne.jp/secondlife/20110919/1316438465
 
 ○Groonga
 http://groonga.rubyforge.org/rroonga/ja/file.tutorial.html
+http://groonga.org/docs/executables/groonga.html
 
+ActiveGroonga を使った
+http://typo.okkez.net/2010/12/05/try-activegroonga

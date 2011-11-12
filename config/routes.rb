@@ -1,5 +1,10 @@
 YourSecretary::Application.routes.draw do
 
+  #resources :haiku_searches
+  resources :haiku_searches, :only=>[:index,:show,:new,:update,:edit,:create,:destroy] do
+    post :search, :on=>:collection
+  end
+
   resources :haikus
 
   resources :tweets

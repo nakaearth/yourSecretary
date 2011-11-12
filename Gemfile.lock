@@ -195,7 +195,6 @@ DEPENDENCIES
   json
   omniauth (= 0.3.2)
   rails (= 3.0.9)
-  rroonga
   rspec
   rspec-rails
   sprockets (~> 2.0)
