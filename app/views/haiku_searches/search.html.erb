@@ -1,5 +1,18 @@
-<h1>検索結果一覧</h1>
+<h1>俳句の検索</h1>
+<%= form_tag :controller=>'haiku_searches' ,:action=>'search' do  %>
+  <div class="field">
+    Word:
+    <%= text_field_tag :keyword %>
+  </div>
+  <div class="actions">
+    <%= submit_tag '検索' %>
+  </div>
+<% end %>
 
+
+<h1>検索結果一覧</h1>
+検査ワードは？？：<%=@keyword %>
+<br>
 <table>
   <tr>
     <th>本文</th>

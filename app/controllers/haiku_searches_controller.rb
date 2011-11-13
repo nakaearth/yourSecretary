@@ -12,7 +12,8 @@ class HaikuSearchesController < ApplicationController
   
   # search 
   def search
-    @result_set = HaikuSearch.select(:sentence=> params[:keyword])
+    @keyword = params[:keyword]
+    @result_set = HaikuSearch.select(:sentence=>@keyword)
   end  
 
   # GET /haiku_searches/1

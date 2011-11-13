@@ -30255,3 +30255,1467 @@ Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 15:17:07 +0900
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"test", "commit"=>"検索"}
 Rendered haiku_searches/search.html.erb within layouts/application (12.0ms)
 Completed 200 OK in 30ms (Views: 18.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/haiku_searches/" for 127.0.0.1 at 2011-11-12 16:13:37 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 109ms (Views: 23.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 16:14:04 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"テスト", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 32ms (Views: 20.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/haiku_searches/new" for 127.0.0.1 at 2011-11-12 16:14:57 +0900
+  Processing by HaikuSearchesController#new as HTML
+Rendered haiku_searches/_form.html.erb (57.5ms)
+Rendered haiku_searches/new.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 82ms (Views: 69.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/haiku_searches" for 127.0.0.1 at 2011-11-12 16:15:03 +0900
+  Processing by HaikuSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku_search"=>{"sentence"=>"atest atetete jkjkjjjj"}, "commit"=>"登録する"}
+Redirected to http://localhost:3000/haiku_searches/10
+Completed 302 Found in 15ms
+
+
+Started GET "/haiku_searches/10" for 127.0.0.1 at 2011-11-12 16:15:03 +0900
+  Processing by HaikuSearchesController#show as HTML
+  Parameters: {"id"=>"10"}
+Rendered haiku_searches/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 68ms (Views: 10.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 16:15:07 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 35ms (Views: 23.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 16:16:15 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"aaaaa", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 35ms (Views: 22.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 19:27:00 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.4ms)
+Rendered common/_login_info.html.erb (23.4ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (69.5ms)
+Completed 200 OK in 210ms (Views: 76.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-12 19:27:06 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.2ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (89.6ms)
+Completed 200 OK in 172ms (Views: 94.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:27:09 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 158ms (Views: 29.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:27:20 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"haihai", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 64ms (Views: 52.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:27:34 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"テスト", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 32ms (Views: 20.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/haiku_searches/new" for 127.0.0.1 at 2011-11-12 19:28:02 +0900
+  Processing by HaikuSearchesController#new as HTML
+Rendered haiku_searches/_form.html.erb (58.8ms)
+Rendered haiku_searches/new.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 85ms (Views: 71.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:28:21 +0900
+  Processing by HaikuSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku_search"=>{"sentence"=>"これもテスト、テスト。お腹空いたよ。パスタ"}, "commit"=>"登録する"}
+Redirected to http://localhost:3000/haiku_searches/11
+Completed 302 Found in 17ms
+
+
+Started GET "/haiku_searches/11" for 127.0.0.1 at 2011-11-12 19:28:21 +0900
+  Processing by HaikuSearchesController#show as HTML
+  Parameters: {"id"=>"11"}
+Rendered haiku_searches/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 25ms (Views: 11.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:28:23 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 36ms (Views: 25.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:28:32 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"パスタ、グラタン", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 37ms (Views: 24.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/haiku_searches/" for 127.0.0.1 at 2011-11-12 19:28:37 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 38ms (Views: 26.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:28:43 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"パスタ", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/haiku_searches/" for 127.0.0.1 at 2011-11-12 19:28:58 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 37ms (Views: 25.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/haiku_searches/new" for 127.0.0.1 at 2011-11-12 19:29:08 +0900
+  Processing by HaikuSearchesController#new as HTML
+Rendered haiku_searches/_form.html.erb (6.5ms)
+Rendered haiku_searches/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 61ms (Views: 18.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:29:48 +0900
+  Processing by HaikuSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku_search"=>{"sentence"=>"グラタン、パスタ"}, "commit"=>"登録する"}
+Redirected to http://localhost:3000/haiku_searches/12
+Completed 302 Found in 16ms
+
+
+Started GET "/haiku_searches/12" for 127.0.0.1 at 2011-11-12 19:29:49 +0900
+  Processing by HaikuSearchesController#show as HTML
+  Parameters: {"id"=>"12"}
+Rendered haiku_searches/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 10.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:29:50 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:30:06 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"パスタ", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 36ms (Views: 25.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/haiku_searches/new" for 127.0.0.1 at 2011-11-12 19:31:20 +0900
+  Processing by HaikuSearchesController#new as HTML
+Rendered haiku_searches/_form.html.erb (6.8ms)
+Rendered haiku_searches/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 32ms (Views: 19.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:32:10 +0900
+  Processing by HaikuSearchesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku_search"=>{"sentence"=>"奥の細道"}, "commit"=>"登録する"}
+Redirected to http://localhost:3000/haiku_searches/13
+Completed 302 Found in 17ms
+
+
+Started GET "/haiku_searches/13" for 127.0.0.1 at 2011-11-12 19:32:10 +0900
+  Processing by HaikuSearchesController#show as HTML
+  Parameters: {"id"=>"13"}
+Rendered haiku_searches/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 23ms (Views: 10.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:32:13 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 42ms (Views: 30.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/haiku_searches/7" for 127.0.0.1 at 2011-11-12 19:32:29 +0900
+  Processing by HaikuSearchesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "id"=>"7"}
+Redirected to http://localhost:3000/haiku_searches
+Completed 302 Found in 14ms
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:32:29 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 92ms (Views: 79.8ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/haiku_searches/10" for 127.0.0.1 at 2011-11-12 19:32:38 +0900
+  Processing by HaikuSearchesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "id"=>"10"}
+Redirected to http://localhost:3000/haiku_searches
+Completed 302 Found in 13ms
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-12 19:32:38 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 41ms (Views: 28.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:33:28 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"細道", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 34ms (Views: 22.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/haiku_searches/" for 127.0.0.1 at 2011-11-12 19:38:19 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 41ms (Views: 29.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/haiku_searches/" for 127.0.0.1 at 2011-11-12 19:41:59 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 80ms (Views: 32.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:43:32 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"テスト", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 37ms (Views: 24.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-12 19:43:40 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"パスタ", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 22:57:21 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.7ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (64.3ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (108.2ms)
+Completed 200 OK in 239ms (Views: 114.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-12 22:57:25 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.9ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.3ms)
+Rendered haikus/index.html.erb within layouts/haiku (48.9ms)
+Completed 200 OK in 204ms (Views: 53.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/haikus/new" for 127.0.0.1 at 2011-11-12 22:57:28 +0900
+  Processing by HaikusController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered haikus/_form.html.erb (21.3ms)
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (65.6ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/new.html.erb within layouts/haiku (102.7ms)
+Completed 200 OK in 217ms (Views: 109.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/haikus" for 127.0.0.1 at 2011-11-12 22:58:04 +0900
+  Processing by HaikusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku"=>{"title"=>"今日のご飯", "sentence"=>"今日のゴハン。\r\n　奥の細道"}, "commit"=>"登録する"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "haikus" ("title", "sentence", "user_id", "point", "created_at", "updated_at") VALUES ('今日のご飯', '今日のゴハン。
+　奥の細道', 1, NULL, '2011-11-12 13:58:05.069423', '2011-11-12 13:58:05.069423')[0m
+Completed 500 Internal Server Error in 212ms
+
+NoMethodError (undefined method `add' for nil:NilClass):
+  app/controllers/haikus_controller.rb:56:in `block in create'
+  app/controllers/haikus_controller.rb:53:in `create'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.8ms)
+
+
+Started GET "/haikus/new" for 127.0.0.1 at 2011-11-13 10:20:55 +0900
+  Processing by HaikusController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered haikus/_form.html.erb (25.1ms)
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (24.2ms)
+Rendered common/_menu.html.erb (3.2ms)
+Rendered haikus/new.html.erb within layouts/haiku (67.5ms)
+Completed 200 OK in 188ms (Views: 74.1ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/haikus" for 127.0.0.1 at 2011-11-13 10:21:15 +0900
+  Processing by HaikusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku"=>{"title"=>"テスト", "sentence"=>"これはテストです。\r\nテストです"}, "commit"=>"登録する"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.6ms)[0m  [1mINSERT INTO "haikus" ("title", "sentence", "user_id", "point", "created_at", "updated_at") VALUES ('テスト', 'これはテストです。
+テストです', 1, NULL, '2011-11-13 01:21:15.683916', '2011-11-13 01:21:15.683916')[0m
+Redirected to http://localhost:3000/haikus/8
+Completed 302 Found in 385ms
+
+
+Started GET "/haikus/8" for 127.0.0.1 at 2011-11-13 10:21:15 +0900
+  Processing by HaikusController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mHaiku Load (0.6ms)[0m  SELECT "haikus".* FROM "haikus" WHERE "haikus"."id" = 8 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (66.4ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered haikus/show.html.erb within layouts/haiku (96.2ms)
+Completed 200 OK in 161ms (Views: 102.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 10:21:43 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (2.3ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered haikus/index.html.erb within layouts/haiku (50.7ms)
+Completed 200 OK in 212ms (Views: 55.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-13 10:21:46 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 59ms (Views: 40.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/haiku" for 127.0.0.1 at 2011-11-13 10:22:40 +0900
+
+ActionController::RoutingError (No route matches "/haiku"):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 10:22:44 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.8ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.3ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/index.html.erb within layouts/haiku (75.8ms)
+Completed 200 OK in 204ms (Views: 79.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/haikus/8" for 127.0.0.1 at 2011-11-13 10:22:51 +0900
+  Processing by HaikusController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mHaiku Load (0.6ms)[0m  SELECT "haikus".* FROM "haikus" WHERE "haikus"."id" = 8 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (22.6ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered haikus/show.html.erb within layouts/haiku (131.2ms)
+Completed 200 OK in 195ms (Views: 135.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 10:22:55 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.6ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (50.7ms)
+Completed 200 OK in 180ms (Views: 55.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/haikus/new" for 127.0.0.1 at 2011-11-13 10:23:03 +0900
+  Processing by HaikusController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered haikus/_form.html.erb (64.0ms)
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (22.9ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/new.html.erb within layouts/haiku (132.2ms)
+Completed 200 OK in 194ms (Views: 136.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/haikus" for 127.0.0.1 at 2011-11-13 10:23:48 +0900
+  Processing by HaikusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "haiku"=>{"title"=>"安倍川餅好き", "sentence"=>"安倍川餅は旨い。正月には食べるぞ"}, "commit"=>"登録する"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "haikus" ("title", "sentence", "user_id", "point", "created_at", "updated_at") VALUES ('安倍川餅好き', '安倍川餅は旨い。正月には食べるぞ', 1, NULL, '2011-11-13 01:23:48.440534', '2011-11-13 01:23:48.440534')[0m
+Redirected to http://localhost:3000/haikus/9
+Completed 302 Found in 195ms
+
+
+Started GET "/haikus/9" for 127.0.0.1 at 2011-11-13 10:23:48 +0900
+  Processing by HaikusController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mHaiku Load (0.5ms)[0m  SELECT "haikus".* FROM "haikus" WHERE "haikus"."id" = 9 LIMIT 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (23.3ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/show.html.erb within layouts/haiku (53.1ms)
+Completed 200 OK in 192ms (Views: 57.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 10:23:51 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.7ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.3ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/index.html.erb within layouts/haiku (101.0ms)
+Completed 200 OK in 226ms (Views: 105.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-13 10:23:53 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 42ms (Views: 30.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-13 10:24:07 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"安倍川", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 45ms (Views: 33.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/haiku_searches/6" for 127.0.0.1 at 2011-11-13 11:51:08 +0900
+  Processing by HaikuSearchesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "id"=>"6"}
+Redirected to http://localhost:3000/haiku_searches
+Completed 302 Found in 20ms
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-13 11:51:08 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 52ms (Views: 36.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-13 11:52:12 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "keyword"=>"餅", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 39ms (Views: 27.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/haiku" for 127.0.0.1 at 2011-11-13 12:38:53 +0900
+
+ActionController::RoutingError (No route matches "/haiku"):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 12:38:56 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.9ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/index.html.erb within layouts/haiku (67.4ms)
+Completed 200 OK in 203ms (Views: 72.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/haikus/2" for 127.0.0.1 at 2011-11-13 12:39:14 +0900
+  Processing by HaikusController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WAT1l13Rxi/ens8J6LazdLoTtTt+j3jEj9Y9agmt/RA=", "id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (0.6ms)[0m  SELECT "haikus".* FROM "haikus" WHERE "haikus"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mDELETE FROM "haikus" WHERE "haikus"."id" = 2[0m
+Redirected to http://localhost:3000/haikus
+Completed 302 Found in 158ms
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 12:39:14 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.5ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (51.0ms)
+Completed 200 OK in 210ms (Views: 55.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/secretaries" for 127.0.0.1 at 2011-11-13 12:39:34 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.8ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (22.4ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (108.5ms)
+Completed 200 OK in 187ms (Views: 114.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 12:39:38 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.5ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/index.html.erb within layouts/haiku (50.5ms)
+Completed 200 OK in 208ms (Views: 54.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-13 13:06:00 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (62.9ms)
+ERROR: compiling _app_views_common__menu_html_erb___644531894722879076_2167791840_3387584993406177958 RAISED /usr/local/project/your_secretary/app/views/common/_menu.html.erb:26: syntax error, unexpected keyword_ensure, expecting keyword_end
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:28: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_common__menu_html_erb___644531894722879076_2167791840_3387584993406177958(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "common/_menu";_old_output_buffer = @output_buffer;menu = local_assigns[:menu];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div class="menu_text">
+'); if @current_user != nil 
+@output_buffer.safe_concat('<br>
+<font color="red" size="4">
+'); if controller.name=="secretroy" || controller.name=="my_page" 
+@output_buffer.safe_concat('「*という名前の本が欲しい」や「*に予定を入れようかな」「TODO:」と呟くと貴方の秘書が情報を登録します。
+'); else if controller.name=="haiku"  
+@output_buffer.safe_concat(' 俳句を見てみましょう。お気に入りの俳句はありますか？ 
+'); end 
+@output_buffer.safe_concat('
+</font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</div>
+<br>
+  
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/usr/local/project/your_secretary/app/views/layouts/secretaries.html.erb:14:in `_app_views_layouts_secretaries_html_erb___2455981368253308194_2167073800_3632868313987656315'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/usr/local/project/your_secretary/app/controllers/secretaries_controller.rb:10:in `index'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__3378247442983311661__process_action__657385197365291361__callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/strategy.rb:44:in `call!'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/strategy.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/builder.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:47:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:41:in `each'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:41:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+Rendered common/_menu.html.erb (12.4ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (116.0ms)
+Completed 500 Internal Server Error in 240ms
+
+ActionView::Template::Error (/usr/local/project/your_secretary/app/views/common/_menu.html.erb:26: syntax error, unexpected keyword_ensure, expecting keyword_end
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:28: syntax error, unexpected $end, expecting keyword_end):
+    23: <br>
+    24:   
+  app/views/layouts/secretaries.html.erb:14:in `_app_views_layouts_secretaries_html_erb___2455981368253308194_2167073800_3632868313987656315'
+  app/controllers/secretaries_controller.rb:10:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-13 13:07:08 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (63.7ms)
+Rendered common/_menu.html.erb (13.8ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (117.7ms)
+Completed 500 Internal Server Error in 242ms
+
+ActionView::Template::Error (undefined method `name' for #<SecretariesController:0x00000103b63ab0>):
+    2: <% if @current_user != nil %>
+    3: <br>
+    4: <font color="red" size="4">
+    5: <% if controller.name=="secretroy" || controller.name=="my_page" %>
+    6: 「*という名前の本が欲しい」や「*に予定を入れようかな」「TODO:」と呟くと貴方の秘書が情報を登録します。
+    7: <% elsif controller.name=="haiku"  %>
+    8:  俳句を見てみましょう。お気に入りの俳句はありますか？ 
+  app/views/common/_menu.html.erb:5:in `_app_views_common__menu_html_erb___3974498202075025078_2152407020_2134377270302286674'
+  app/views/layouts/secretaries.html.erb:14:in `_app_views_layouts_secretaries_html_erb___3444674421727630002_2178177100_2921838524723559311'
+  app/controllers/secretaries_controller.rb:10:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.2ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-13 13:12:05 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (22.5ms)
+Rendered common/_menu.html.erb (3.3ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (65.6ms)
+Completed 200 OK in 190ms (Views: 71.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:12:11 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.6ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered haikus/index.html.erb within layouts/haiku (94.5ms)
+Completed 200 OK in 215ms (Views: 99.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/secretaries/new" for 127.0.0.1 at 2011-11-13 13:12:16 +0900
+  Processing by SecretariesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered secretaries/_form.html.erb (18.6ms)
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (22.1ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/new.html.erb within layouts/secretaries (56.1ms)
+Completed 200 OK in 218ms (Views: 64.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-11-13 13:12:22 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.8ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.4ms)
+Rendered common/_menu.html.erb (3.3ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/my_tweets.html.erb within layouts/my_page (19.3ms)
+Completed 200 OK in 2922ms (Views: 26.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-13 13:12:29 +0900
+  Processing by MyPageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 0)
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 1)
+localhost:11211 is down
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretaryWord Load (0.3ms)[0m  [1mSELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE (user_id=1)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "schedules" WHERE (user_id=1)
+  [1m[36mSchedule Load (0.2ms)[0m  [1mSELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (107.3ms)
+Completed 200 OK in 1718ms (Views: 113.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:12:34 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.5ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (51.1ms)
+Completed 200 OK in 209ms (Views: 54.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:13:54 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.7ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (3.2ms)
+Rendered haikus/index.html.erb within layouts/haiku (96.6ms)
+Completed 200 OK in 228ms (Views: 101.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-13 13:18:33 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (64.6ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (107.9ms)
+Completed 200 OK in 232ms (Views: 113.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:18:53 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.5ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (50.4ms)
+Completed 200 OK in 208ms (Views: 55.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-13 13:20:50 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 0)
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 1)
+localhost:11211 is down
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (62.5ms)
+Completed 200 OK in 1601ms (Views: 67.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/secretaries/new" for 127.0.0.1 at 2011-11-13 13:20:55 +0900
+  Processing by SecretariesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered secretaries/_form.html.erb (14.1ms)
+Rendered common/_header.html.erb (0.9ms)
+Rendered common/_login_info.html.erb (67.3ms)
+Rendered common/_menu.html.erb (3.1ms)
+Rendered secretaries/new.html.erb within layouts/secretaries (96.0ms)
+Completed 200 OK in 178ms (Views: 101.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/secretaries" for 127.0.0.1 at 2011-11-13 13:20:57 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (21.7ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (63.3ms)
+Completed 200 OK in 207ms (Views: 68.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:21:00 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.8ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered haikus/index.html.erb within layouts/haiku (51.7ms)
+Completed 200 OK in 208ms (Views: 55.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:22:17 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.5ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (13.3ms)
+Rendered haikus/index.html.erb within layouts/haiku (63.8ms)
+Completed 500 Internal Server Error in 196ms
+
+ActionView::Template::Error (undefined method `name' for #<HaikusController:0x0000010275b0b8>):
+    7: <% elsif #{controller.name}=="haikus"  %>
+    8:  俳句を見てみましょう。お気に入りの俳句はありますか？ 
+    9: <% end %>
+    10: <%= controller.name %>
+    11: </font>
+    12: <br><br><br>
+    13: <%= link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} %>&nbsp;&nbsp;|&nbsp;&nbsp;
+  app/views/common/_menu.html.erb:10:in `_app_views_common__menu_html_erb___3377092584219662104_2163117520__1031076800028963019'
+  app/views/layouts/haiku.html.erb:14:in `_app_views_layouts_haiku_html_erb__73894256925890659_2178306900__2327550441334358318'
+  app/controllers/haikus_controller.rb:13:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.1ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:22:50 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.8ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.2ms)
+ERROR: compiling _app_views_common__menu_html_erb__2838607246171647790_2165421700__530673868777431660 RAISED /usr/local/project/your_secretary/app/views/common/_menu.html.erb:22: unknown regexp options - dv
+unmatched close parenthesis: /font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</i
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:23: syntax error, unexpected '<'
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: unterminated string meets end of file
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_common__menu_html_erb__2838607246171647790_2165421700__530673868777431660(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "common/_menu";_old_output_buffer = @output_buffer;menu = local_assigns[:menu];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div class="menu_text">
+'); if @current_user != nil 
+@output_buffer.safe_concat('<br>
+<font color="red" size="4">
+'); if #{controller.name}=="secretroies" || #{controller.name}=="my_page" 
+@output_buffer.safe_concat('「*という名前の本が欲しい」や「*に予定を入れようかな」「TODO:」と呟くと貴方の秘書が情報を登録します。
+'); elsif #{controller.name}=="haikus"  
+@output_buffer.safe_concat(' 俳句を見てみましょう。お気に入りの俳句はありますか？ 
+'); end 
+@output_buffer.append= ( #{controller.name} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</div>
+<br>
+  
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/usr/local/project/your_secretary/app/views/layouts/haiku.html.erb:14:in `_app_views_layouts_haiku_html_erb___1313703093752592489_2167643740__3527877927568281714'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/usr/local/project/your_secretary/app/controllers/haikus_controller.rb:13:in `index'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__3847894645457179066__process_action__548046902025963663__callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/strategy.rb:44:in `call!'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/strategy.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/builder.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:47:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:41:in `each'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:41:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+Rendered common/_menu.html.erb (9.8ms)
+Rendered haikus/index.html.erb within layouts/haiku (63.4ms)
+Completed 500 Internal Server Error in 194ms
+
+ActionView::Template::Error (/usr/local/project/your_secretary/app/views/common/_menu.html.erb:22: unknown regexp options - dv
+unmatched close parenthesis: /font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</i
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:23: syntax error, unexpected '<'
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: unterminated string meets end of file
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: syntax error, unexpected $end, expecting ')'):
+    19:   <%= link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+    20: -->
+    21: <% end %>
+    22: </div>
+    23: <br>
+    24:   
+  app/views/layouts/haiku.html.erb:14:in `_app_views_layouts_haiku_html_erb___1313703093752592489_2167643740__3527877927568281714'
+  app/controllers/haikus_controller.rb:13:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (43.0ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (59.4ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:22:53 +0900
+  Processing by HaikusController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mHaiku Load (1.5ms)[0m  [1mSELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.3ms)
+ERROR: compiling _app_views_common__menu_html_erb__2838607246171647790_2154749100__530673868777431660 RAISED /usr/local/project/your_secretary/app/views/common/_menu.html.erb:22: unknown regexp options - dv
+unmatched close parenthesis: /font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</i
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:23: syntax error, unexpected '<'
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: unterminated string meets end of file
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_common__menu_html_erb__2838607246171647790_2154749100__530673868777431660(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "common/_menu";_old_output_buffer = @output_buffer;menu = local_assigns[:menu];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div class="menu_text">
+'); if @current_user != nil 
+@output_buffer.safe_concat('<br>
+<font color="red" size="4">
+'); if #{controller.name}=="secretroies" || #{controller.name}=="my_page" 
+@output_buffer.safe_concat('「*という名前の本が欲しい」や「*に予定を入れようかな」「TODO:」と呟くと貴方の秘書が情報を登録します。
+'); elsif #{controller.name}=="haikus"  
+@output_buffer.safe_concat(' 俳句を見てみましょう。お気に入りの俳句はありますか？ 
+'); end 
+@output_buffer.append= ( #{controller.name} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</div>
+<br>
+  
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/usr/local/project/your_secretary/app/views/layouts/haiku.html.erb:14:in `_app_views_layouts_haiku_html_erb___1313703093752592489_2167474680__3527877927568281714'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/usr/local/project/your_secretary/app/controllers/haikus_controller.rb:13:in `index'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__3847894645457179066__process_action__548046902025963663__callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/strategy.rb:44:in `call!'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/strategy.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/oa-core-0.3.2/lib/omniauth/builder.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:47:in `block in call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:41:in `each'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/urlmap.rb:41:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/nakamurashinichirou/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+Rendered common/_menu.html.erb (2.2ms)
+Rendered haikus/index.html.erb within layouts/haiku (50.0ms)
+Completed 500 Internal Server Error in 205ms
+
+ActionView::Template::Error (/usr/local/project/your_secretary/app/views/common/_menu.html.erb:22: unknown regexp options - dv
+unmatched close parenthesis: /font>
+<br><br><br>
+');@output_buffer.append= ( link_to '登録した秘書一覧へ', {:action=>'index',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '秘書を登録する', {:action=>'new',:controller=>'secretaries'} );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '依頼内容の確認', :controller=>'my_page' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to 'ツイートを見る',:controller=>'my_page',:action=>'my_tweets' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+');@output_buffer.append= ( link_to '俳句を書く',:controller=>'haikus',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+<!--
+  ');@output_buffer.append= ( link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' );@output_buffer.safe_concat('&nbsp;&nbsp;|&nbsp;&nbsp;
+-->
+'); end 
+@output_buffer.safe_concat('</i
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:23: syntax error, unexpected '<'
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: unterminated string meets end of file
+/usr/local/project/your_secretary/app/views/common/_menu.html.erb:25: syntax error, unexpected $end, expecting ')'):
+    19:   <%= link_to 'あなたの友人で有名なのは？',:controller=>'tweets',:action=>'index' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+    20: -->
+    21: <% end %>
+    22: </div>
+    23: <br>
+    24:   
+  app/views/layouts/haiku.html.erb:14:in `_app_views_layouts_haiku_html_erb___1313703093752592489_2167474680__3527877927568281714'
+  app/controllers/haikus_controller.rb:13:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:26:05 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.6ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.7ms)
+Rendered haikus/index.html.erb within layouts/haiku (51.4ms)
+Completed 200 OK in 181ms (Views: 56.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/haikus/new" for 127.0.0.1 at 2011-11-13 13:26:12 +0900
+  Processing by HaikusController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered haikus/_form.html.erb (24.1ms)
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (24.0ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/new.html.erb within layouts/haiku (64.3ms)
+Completed 200 OK in 167ms (Views: 68.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-13 13:26:18 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.7ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.0ms)
+Rendered common/_login_info.html.erb (1.2ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered haikus/index.html.erb within layouts/haiku (50.9ms)
+Completed 200 OK in 176ms (Views: 54.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-13 13:26:20 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 162ms (Views: 31.3ms | ActiveRecord: 1.2ms)
