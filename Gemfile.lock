@@ -17,9 +17,6 @@ GEM
       rack-mount (~> 0.6.14)
       rack-test (~> 0.5.7)
       tzinfo (~> 0.3.23)
-    activegroonga (1.0.4)
-      activemodel (>= 3.0.1)
-      rroonga (>= 1.0.4)
     activemodel (3.0.9)
       activesupport (= 3.0.9)
       builder (~> 2.1.2)
@@ -108,7 +105,6 @@ GEM
       oa-more (= 0.3.2)
       oa-oauth (= 0.3.2)
       oa-openid (= 0.3.2)
-    pkg-config (1.1.2)
     polyglot (0.3.3)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.2.4)
@@ -138,8 +134,6 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rroonga (1.2.9)
-      pkg-config
     rspec (2.7.0)
       rspec-core (~> 2.7.0)
       rspec-expectations (~> 2.7.0)
@@ -185,7 +179,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  activegroonga
   bartt-ssl_requirement
   carrierwave
   dalli
