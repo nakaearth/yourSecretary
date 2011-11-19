@@ -1,0 +1,30 @@
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 00:35:59 +0900
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (42.2ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 00:40:30 +0900
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 00:40:33 +0900
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
