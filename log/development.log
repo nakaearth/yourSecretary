@@ -31719,3 +31719,12 @@ Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-13 13:26:20 +0900
   Processing by HaikuSearchesController#index as HTML
 Rendered haiku_searches/index.html.erb within layouts/application (22.9ms)
 Completed 200 OK in 162ms (Views: 31.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-19 16:15:06 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.5ms)
+Rendered common/_menu.html.erb (1.2ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (45.4ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.9ms)

@@ -14,6 +14,7 @@ gem 'twitter4r'
 gem 'jquery-rails', '>= 0.2.6'
 
 gem 'jpmobile',  :require => 'action_pack'
+#gem 'jpmobile'
 gem 'bartt-ssl_requirement', :require => 'ssl_requirement'
 gem 'sprockets', '~> 2.0'
 gem 'dalli'
