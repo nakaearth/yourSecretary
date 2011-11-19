@@ -1,6 +1,6 @@
 class AbstractSmtController < ApplicationController
   helper_method :current_user
-  hankaku_filter
+#  hankaku_filter
   
   private
   def current_user
