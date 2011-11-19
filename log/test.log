@@ -20,3 +20,5 @@ Rendered common/_login_info.html.erb (0.0ms)
 Rendered common/_menu.html.erb (0.0ms)
 Rendered tasks/new.html.erb within layouts/global_layout (15.0ms)
 Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+SQLite3::SQLException: no such table: users: SELECT "users".* FROM "users"
