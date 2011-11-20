@@ -31832,3 +31832,272 @@ Migrating to CreatePoints (20111105045220)
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSecretaries (20110417030437)
+Migrating to CreateUsers (20110419151327)
+Migrating to CreateBooks (20110430033812)
+Migrating to CreateMyTweets (20110508032302)
+Migrating to AddImageToUsers (20110526155717)
+Migrating to AddTokenToUsers (20110610144140)
+Migrating to AddIndexUsers (20110611095448)
+Migrating to CreateSchedules (20110614145356)
+Migrating to AddColumnSecretary (20110623154542)
+Migrating to CreateSecretaryWords (20110625081802)
+Migrating to AddColumnUsersForImagePath (20110717151414)
+Migrating to CreateTasks (20110812110153)
+Migrating to AddSessionsTable (20111029031206)
+Migrating to CreateHaikus (20111029083853)
+Migrating to CreatePoints (20111105045220)
+  [1m[35mSQL (0.8ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("haikus")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("my_tweets")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("points")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schedules")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("secretaries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_secretaries_on_user_id_and_main_flag')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_secretaries_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("secretary_words")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tasks")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_uid')
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 11:45:39 +0900
+  Processing by SecretariesController#index as HTML
+Rendered common/_header.html.erb (1.3ms)
+Rendered common/_login_info.html.erb (1.5ms)
+Rendered common/_menu.html.erb (1.2ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (46.3ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2011-11-20 11:45:42 +0900
+
+
+Started GET "/auth/twitter/callback?oauth_token=dcx23mZFNYKYxWPwCy5XNDMsJy13WK3gcj5arqDv4&oauth_verifier=AsnUoUqI3zzyaVRfjBydNgoArYly1nW1lSlk4qnI" for 127.0.0.1 at 2011-11-20 11:45:47 +0900
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"dcx23mZFNYKYxWPwCy5XNDMsJy13WK3gcj5arqDv4", "oauth_verifier"=>"AsnUoUqI3zzyaVRfjBydNgoArYly1nW1lSlk4qnI", "provider"=>"twitter"}
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '7751092' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 139ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 11:45:49 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (2.6ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (24.6ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (71.5ms)
+Completed 200 OK in 172ms (Views: 74.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-20 11:45:55 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.8ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered haikus/index.html.erb within layouts/haiku (100.9ms)
+Completed 200 OK in 164ms (Views: 108.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/haikus" for 127.0.0.1 at 2011-11-20 11:54:05 +0900
+  Processing by HaikusController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mHaiku Load (1.7ms)[0m  SELECT "haikus".* FROM "haikus" INNER JOIN "users" ON "users"."id" = "haikus"."user_id"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered haikus/index.html.erb within layouts/haiku (53.8ms)
+Completed 200 OK in 166ms (Views: 58.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/haiku_searches" for 127.0.0.1 at 2011-11-20 11:54:08 +0900
+  Processing by HaikuSearchesController#index as HTML
+Rendered haiku_searches/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 144ms (Views: 42.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-20 11:54:15 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0qYl1762JYEhwkbbFQDKfOE9U248COUcvyysdDSoxX0=", "keyword"=>"テスト", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/haiku_searches/search" for 127.0.0.1 at 2011-11-20 11:54:29 +0900
+  Processing by HaikuSearchesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0qYl1762JYEhwkbbFQDKfOE9U248COUcvyysdDSoxX0=", "keyword"=>"パスタ", "commit"=>"検索"}
+Rendered haiku_searches/search.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/haiku" for 127.0.0.1 at 2011-11-20 11:54:42 +0900
+
+ActionController::RoutingError (No route matches "/haiku"):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/haiku/" for 127.0.0.1 at 2011-11-20 11:54:48 +0900
+
+ActionController::RoutingError (No route matches "/haiku"):
+  
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 11:57:47 +0900
+  Processing by SecretariesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "secretaries" WHERE (user_id =1)[0m
+  [1m[35mSecretary Load (0.4ms)[0m  SELECT "secretaries".* FROM "secretaries" WHERE (user_id =1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (22.9ms)
+Rendered common/_menu.html.erb (62.2ms)
+Rendered secretaries/index.html.erb within layouts/secretaries (125.1ms)
+Completed 200 OK in 235ms (Views: 131.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/my_page/my_tweets" for 127.0.0.1 at 2011-11-20 11:58:17 +0900
+  Processing by MyPageController#my_tweets as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (2.5ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/my_tweets.html.erb within layouts/my_page (19.1ms)
+Completed 200 OK in 2867ms (Views: 26.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-20 11:58:23 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 0)
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 1)
+localhost:11211 is down
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (1.3ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered common/_sub_mypage_menu.html.erb (0.8ms)
+Rendered my_page/index.html.erb within layouts/my_page (109.0ms)
+Completed 200 OK in 1545ms (Views: 115.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/tasks/2/edit" for 127.0.0.1 at 2011-11-20 11:58:37 +0900
+  Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1[0m
+Rendered tasks/_form.html.erb (83.0ms)
+Rendered common/_header.html.erb (1.4ms)
+Rendered common/_login_info.html.erb (23.1ms)
+Rendered common/_menu.html.erb (2.9ms)
+Rendered tasks/edit.html.erb within layouts/global_layout (122.6ms)
+Completed 200 OK in 175ms (Views: 132.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/tasks/2" for 127.0.0.1 at 2011-11-20 11:58:45 +0900
+  Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0qYl1762JYEhwkbbFQDKfOE9U248COUcvyysdDSoxX0=", "task"=>{"priority"=>"２"}, "commit"=>"更新する", "id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1[0m
+Rendered tasks/_form.html.erb (9.0ms)
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (27.1ms)
+Rendered common/_menu.html.erb (68.2ms)
+Rendered tasks/edit.html.erb within layouts/global_layout (116.8ms)
+Completed 200 OK in 229ms (Views: 120.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/tasks/2" for 127.0.0.1 at 2011-11-20 11:58:53 +0900
+  Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0qYl1762JYEhwkbbFQDKfOE9U248COUcvyysdDSoxX0=", "task"=>{"priority"=>"2"}, "commit"=>"更新する", "id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "tasks" SET "priority" = 2, "updated_at" = '2011-11-20 02:58:53.477691' WHERE "tasks"."id" = 2
+Redirected to http://localhost:3000/tasks/2
+Completed 302 Found in 129ms
+
+
+Started GET "/tasks/2" for 127.0.0.1 at 2011-11-20 11:58:53 +0900
+  Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1
+Rendered common/_header.html.erb (1.1ms)
+Rendered common/_login_info.html.erb (25.5ms)
+Rendered common/_menu.html.erb (3.0ms)
+Rendered tasks/show.html.erb within layouts/global_layout (102.5ms)
+Completed 200 OK in 152ms (Views: 109.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/my_page/index" for 127.0.0.1 at 2011-11-20 11:58:57 +0900
+  Processing by MyPageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Dalli::Server#connect localhost:11211
+localhost:11211 failed (count: 2)
+localhost:11211 is still down (for 33.286 seconds now)
+down_retry_delay not reached for localhost:11211 (0.972 seconds left)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)
+  [1m[36mSecretary Load (0.4ms)[0m  [1mSELECT "secretaries".* FROM "secretaries" WHERE (user_id=1) AND (main_flag=1)[0m
+  [1m[35mSecretaryWord Load (0.3ms)[0m  SELECT "secretary_words".* FROM "secretary_words" WHERE "secretary_words"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE (user_id=1)[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "schedules" WHERE (user_id=1)[0m
+  [1m[35mSchedule Load (0.2ms)[0m  SELECT "schedules".* FROM "schedules" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE (user_id=1) ORDER BY updated_at desc LIMIT 5 OFFSET 0[0m
+Rendered common/_header.html.erb (1.2ms)
+Rendered common/_login_info.html.erb (1.4ms)
+Rendered common/_menu.html.erb (2.8ms)
+Rendered common/_sub_mypage_menu.html.erb (0.7ms)
+Rendered my_page/index.html.erb within layouts/my_page (113.0ms)
+Completed 200 OK in 2010ms (Views: 117.0ms | ActiveRecord: 5.0ms)

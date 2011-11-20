@@ -28,3 +28,24 @@ ActiveRecord::StatementInvalid (Could not find table 'sessions'):
 Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
 Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
 Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-20 11:33:35 +0900
+  Processing by SecretariesController#index as HTML
+Rendered secretaries/index.html.erb within layouts/secretaries (51.1ms)
+Completed 500 Internal Server Error in 59ms
+
+ActionView::Template::Error (Could not find table 'sessions'):
+    5:   <%= stylesheet_link_tag 'secretaries' ,:media=>'screen' %>
+    6:   <%= stylesheet_link_tag 'common' ,:media=>'screen' %>
+    7:   <%= javascript_include_tag :defaults %>
+    8:   <%= csrf_meta_tag %>
+    9: </head>
+    10: <body>
+    11: <%=render 'common/header' %>
+  app/views/layouts/secretaries.html.erb:8:in `_app_views_layouts_secretaries_html_erb__418759849409936179_2176555600_4196648536170891720'
+  app/controllers/secretaries_controller.rb:10:in `index'
+
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/nakamurashinichirou/.rvm/gems/ruby-1.9.3-p0@rails3_0/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.6ms)
